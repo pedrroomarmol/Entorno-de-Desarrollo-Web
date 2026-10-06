@@ -1,8 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
-{% load static %} <!-- Esta línea le dice a django que usaremos los static -->  
-<html>
+<html lang="es">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <head>
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="site-title" href="{% url 'home' %}">Mi sitio</a>
+            <nav aria-label="Navegación principal">
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'escaparate:home' %}">Escaparate</a>
+            </nav>
+        </header>
+        <main class="page-content">
+            <h1>Bienvenido</h1>
+            <p>Visita el escaparate para ver las imágenes.</p>
+            <a class="button" href="{% url 'escaparate:home' %}">Ver escaparate</a>
+        </main>
+    </body>
+</html>

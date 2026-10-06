@@ -1,0 +1,11 @@
+"""URL patterns for the photo showcase application."""
+
+from django.urls import path
+
+from . import views
+
+app_name = 'escaparate'
+
+urlpatterns = [
+    path('', views.home, name='home'),
+]
