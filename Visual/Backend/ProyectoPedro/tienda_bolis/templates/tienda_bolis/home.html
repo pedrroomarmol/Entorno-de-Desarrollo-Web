@@ -1,0 +1,69 @@
+{% extends 'tienda_bolis/base.html' %}
+{% load static %}
+
+{% block title %}Tienda de bolígrafos{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow">ESCRIBE TU PRÓXIMA IDEA</p>
+            <h1>Pequeños detalles.<br><span>Grandes ideas.</span></h1>
+            <p class="hero-description">Bolígrafos elegidos para acompañarte en cada apunte, boceto y proyecto.</p>
+            <a class="button" href="#productos">Descubre la colección <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-label="Ilustración de un bolígrafo azul" role="img">
+            <span class="hero-orbit hero-orbit-one"></span>
+            <span class="hero-orbit hero-orbit-two"></span>
+            <img src="{% static 'images/boligrafo-azul.svg' %}" alt="">
+            <span class="hero-note">Tu próxima<br>idea empieza aquí</span>
+        </div>
+    </section>
+
+    <section class="collection" id="productos">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">LA SELECCIÓN</p>
+                <h2>Para cada forma de crear</h2>
+            </div>
+            <p>Tres favoritos para empezar.</p>
+        </div>
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-image product-image-blue">
+                    <span class="product-label">EL FAVORITO</span>
+                    <img src="{% static 'images/boligrafo-azul.svg' %}" alt="Ilustración de bolígrafo azul clásico">
+                </div>
+                <div class="product-info">
+                    <div><h3>Azul esencial</h3><p>Suave y siempre a punto</p></div>
+                    <span class="product-price">2,50 €</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-image product-image-coral">
+                    <span class="product-label">COLOR Y ENERGÍA</span>
+                    <img src="{% static 'images/boligrafo-coral.svg' %}" alt="Ilustración de bolígrafo color coral">
+                </div>
+                <div class="product-info">
+                    <div><h3>Coral creativo</h3><p>Un toque de color en tus notas</p></div>
+                    <span class="product-price">3,00 €</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-image product-image-green">
+                    <span class="product-label">TRAZO FINO</span>
+                    <img src="{% static 'images/boligrafo-verde.svg' %}" alt="Ilustración de bolígrafo verde de trazo fino">
+                </div>
+                <div class="product-info">
+                    <div><h3>Verde preciso</h3><p>Para ideas con todo detalle</p></div>
+                    <span class="product-price">3,50 €</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="shop-note">
+        <span class="shop-note-icon" aria-hidden="true">✳</span>
+        <div><h2>¿Buscas algo especial?</h2><p>Cuéntanos qué necesitas y te ayudamos a encontrarlo.</p></div>
+        <a class="button button-light" href="{% url 'tienda_bolis:contact' %}">Contactar</a>
+    </section>
+{% endblock %}

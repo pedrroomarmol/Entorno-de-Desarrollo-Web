@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 def homepage(request):
-    """Render the project homepage."""
-    return render(request, 'home.html')
+    """Render the pen shop as the project homepage."""
+    return render(request, 'tienda_bolis/home.html')

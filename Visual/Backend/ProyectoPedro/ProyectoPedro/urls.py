@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='home'),
     path('escaparate/', include('escaparate.urls')),
+    path('tienda-bolis/', include('tienda_bolis.urls')),
 ]

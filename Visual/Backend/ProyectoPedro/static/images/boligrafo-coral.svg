@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-labelledby="title">
+  <title id="title">Bolígrafo coral</title>
+  <defs>
+    <linearGradient id="barrel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffb294"/>
+      <stop offset=".48" stop-color="#f07858"/>
+      <stop offset="1" stop-color="#c64e3e"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#fff8ec"/>
+      <stop offset=".5" stop-color="#b5aaa0"/>
+      <stop offset="1" stop-color="#fff8ec"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(7 320 90)">
+    <path d="M79 70 34 88l45 18z" fill="#633b39"/>
+    <path d="m34 88 12 1-10 4z" fill="#c4a06e"/>
+    <rect x="78" y="65" width="424" height="46" rx="23" fill="url(#barrel)"/>
+    <path d="M118 73h320" fill="none" stroke="#ffe0cc" stroke-linecap="round" stroke-width="5" opacity=".75"/>
+    <rect x="488" y="65" width="20" height="46" rx="5" fill="url(#metal)"/>
+    <path d="M508 70h48q20 0 20 18t-20 18h-48z" fill="url(#barrel)"/>
+    <path d="M545 72v32q22 0 22-16t-22-16z" fill="#c64e3e"/>
+    <path d="M430 68v40" stroke="#f9e1d5" stroke-width="3"/>
+    <path d="M449 69v38" stroke="#9f4639" stroke-width="2" opacity=".6"/>
+  </g>
+</svg>
