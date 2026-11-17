@@ -1,0 +1,14 @@
+{% extends 'tienda_bolis/base.html' %}
+
+{% block title %}Calendario{% endblock %}
+
+{% block content %}
+    <h1>Consultar una fecha</h1>
+    <p>Introduce una fecha con el formato DD-MM-AAAA, por ejemplo 07-03-2026.</p>
+    <form class="contact-form" method="get" action="{% url 'calendario:inicio' %}">
+        <label for="fecha">Fecha</label>
+        <input id="fecha" name="fecha" type="text" placeholder="DD-MM-AAAA" required>
+        {% if error %}<p role="alert">{{ error }}</p>{% endif %}
+        <button class="button" type="submit">Consultar</button>
+    </form>
+{% endblock %}

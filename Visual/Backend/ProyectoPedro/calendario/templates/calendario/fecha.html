@@ -1,0 +1,10 @@
+{% extends 'tienda_bolis/base.html' %}
+
+{% block title %}Fecha consultada | Calendario{% endblock %}
+
+{% block content %}
+    <h1>Fecha consultada</h1>
+    <p>La fecha indicada es el {{ dia }} de {{ mes }} de {{ ano }}.</p>
+    <p>{{ mensaje }}</p>
+    <a class="button" href="{% url 'calendario:inicio' %}">Consultar otra fecha</a>
+{% endblock %}

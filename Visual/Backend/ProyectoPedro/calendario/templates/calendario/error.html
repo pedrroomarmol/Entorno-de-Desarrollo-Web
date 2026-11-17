@@ -1,0 +1,12 @@
+{% extends 'tienda_bolis/base.html' %}
+
+{% block title %}Fecha no válida | Calendario{% endblock %}
+
+{% block content %}
+    <h1>Fecha no válida</h1>
+    <p role="alert">
+        No se puede interpretar «{{ fecha }}». Introduce una fecha real con el formato
+        DD-MM-AAAA, por ejemplo 07-03-2026.
+    </p>
+    <a class="button" href="{% url 'calendario:inicio' %}">Volver a intentarlo</a>
+{% endblock %}

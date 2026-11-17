@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'escaparate.apps.EscaparateConfig',
-    'tienda_bolis.apps.TiendaBolisConfig'
+    'tienda_bolis.apps.TiendaBolisConfig',
+    'calendario.apps.CalendarioConfig',
 ]
 
 MIDDLEWARE = [
