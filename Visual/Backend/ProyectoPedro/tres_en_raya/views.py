@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 
 LINEAS_GANADORAS = (
@@ -21,14 +21,21 @@ def hay_ganador(tablero):
 
 
 def tres_en_raya(request):
-    tablero = '-' * 9
-    turno = 'X'
-    mensaje = 'Turno de X'
-    terminado = False
+    if request.GET.get("reiniciar") == "1":
+        request.session["tablero"] = "-" * 9
+        request.session["turno"] = "X"
+        request.session["mensaje"] = "Turno de X"
+        request.session["terminado"] = False
+        return redirect("tres_en_raya:juego")
 
+    tablero = request.session.get("tablero", "-" * 9)
+    turno = request.session.get("turno", "X")
+    mensaje = request.session.get("mensaje", f"Turno de {turno}")
+    terminado = request.session.get("terminado", False)
+    
     if request.method == 'POST':
-        tablero_enviado = request.POST.get('tablero', '')
-        turno_enviado = request.POST.get('turno', '')
+        tablero_enviado = tablero
+        turno_enviado = turno
 
         if (
             len(tablero_enviado) == 9
@@ -56,6 +63,11 @@ def tres_en_raya(request):
                 else:
                     turno = 'O' if turno == 'X' else 'X'
                     mensaje = f'Turno de {turno}'
+
+                request.session["tablero"] = tablero
+                request.session["turno"] = turno
+                request.session["mensaje"] = mensaje
+                request.session["terminado"] = terminado
 
     return render(
         request,

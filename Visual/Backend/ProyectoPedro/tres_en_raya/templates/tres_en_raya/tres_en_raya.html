@@ -16,8 +16,6 @@
     {% if not terminado %}
         <form class="game-board" method="post" action="{% url 'tres_en_raya:juego' %}">
             {% csrf_token %}
-            <input type="hidden" name="tablero" value="{{ tablero }}">
-            <input type="hidden" name="turno" value="{{ turno }}">
             {% for casilla in tablero %}
                 <button
                     type="submit"
@@ -41,7 +39,8 @@
     {% endif %}
 
     {% if terminado %}
-        <a class="button game-restart" href="{% url 'tres_en_raya:juego' %}">Jugar otra vez</a>
+        <a class="button game-restart" href="{% url 'tres_en_raya:juego' %}?reiniciar=1">
+            {% if terminado %}Jugar otra vez {% else %} Nueva Partida {% endif %} </a>
     {% endif %}
 </section>
 {% endblock %}
