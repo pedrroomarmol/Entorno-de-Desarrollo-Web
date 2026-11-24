@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'escaparate.apps.EscaparateConfig',
     'tienda_bolis.apps.TiendaBolisConfig',
     'calendario.apps.CalendarioConfig',
+    'tres_en_raya.apps.TresEnRayaConfig',
 ]
 
 MIDDLEWARE = [

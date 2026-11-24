@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <main class="portal">
+        <header class="portal-heading">
+            <p class="eyebrow">PORTAL DE APLICACIONES</p>
+            <h1>Mi Proyecto</h1>
+            <p>Selecciona una aplicación para abrirla.</p>
+        </header>
+
+        <section class="app-grid" aria-label="Aplicaciones disponibles">
+            <a class="app-card" href="{% url 'escaparate:home' %}">
+                <span class="app-number">01</span>
+                <div>
+                    <h2>Escaparate</h2>
+                    <p>Galería de imágenes.</p>
+                </div>
+                <span class="app-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="app-card" href="{% url 'tienda_bolis:home' %}">
+                <span class="app-number">02</span>
+                <div>
+                    <h2>Tienda de bolígrafos</h2>
+                    <p>Catálogo y formulario de contacto.</p>
+                </div>
+                <span class="app-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="app-card" href="{% url 'calendario:inicio' %}">
+                <span class="app-number">03</span>
+                <div>
+                    <h2>Calendario</h2>
+                    <p>Consulta y validación de fechas.</p>
+                </div>
+                <span class="app-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="app-card app-card-featured" href="{% url 'tres_en_raya:juego' %}">
+                <span class="app-number">04</span>
+                <div>
+                    <h2>Tres en raya</h2>
+                    <p>Juego para dos jugadores.</p>
+                </div>
+                <span class="app-arrow" aria-hidden="true">→</span>
+            </a>
+        </section>
+    </main>
+</body>
+</html>

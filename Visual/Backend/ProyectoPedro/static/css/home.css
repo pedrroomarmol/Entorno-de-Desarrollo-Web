@@ -1,0 +1,136 @@
+:root {
+    color-scheme: light;
+    --ink: #18342f;
+    --muted: #66736d;
+    --paper: #fbfaf6;
+    --green: #246b55;
+    --line: #dde4dc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 90% 15%, rgb(36 107 85 / 12%), transparent 24rem),
+        var(--paper);
+    font-family: Arial, sans-serif;
+}
+
+.portal {
+    width: min(100% - 2.5rem, 72rem);
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+.portal-heading {
+    margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.portal-heading h1 {
+    margin: 0;
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    letter-spacing: -0.075em;
+}
+
+.portal-heading > p:last-child {
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.app-card {
+    display: grid;
+    min-height: 11rem;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    color: var(--ink);
+    background: rgb(255 255 255 / 72%);
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.app-card:hover,
+.app-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgb(36 107 85 / 35%);
+    background: white;
+}
+
+.app-card-featured {
+    color: white;
+    background: var(--green);
+}
+
+.app-card-featured:hover,
+.app-card-featured:focus-visible {
+    background: #194e3e;
+}
+
+.app-number {
+    align-self: start;
+    color: var(--green);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.app-card-featured .app-number {
+    color: rgb(255 255 255 / 70%);
+}
+
+.app-card h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    letter-spacing: -0.04em;
+}
+
+.app-card p {
+    margin: 0.5rem 0 0;
+    color: var(--muted);
+}
+
+.app-card-featured p {
+    color: rgb(255 255 255 / 75%);
+}
+
+.app-arrow {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .portal {
+        width: min(100% - 2rem, 36rem);
+        padding: 3rem 0;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-card {
+        min-height: 9rem;
+    }
+}

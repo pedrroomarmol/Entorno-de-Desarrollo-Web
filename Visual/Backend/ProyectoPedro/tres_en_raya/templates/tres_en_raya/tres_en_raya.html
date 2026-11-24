@@ -1,0 +1,47 @@
+{% extends 'tienda_bolis/base.html' %}
+{% load static %}
+
+{% block title %}Tres en raya{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tres_en_raya.css' %}">
+
+<section class="game-page">
+    <div class="game-heading">
+        <p class="eyebrow">DOS JUGADORES</p>
+        <h1>Tres en raya</h1>
+        <p class="game-message" role="status">{{ mensaje }}</p>
+    </div>
+
+    {% if not terminado %}
+        <form class="game-board" method="post" action="{% url 'tres_en_raya:juego' %}">
+            {% csrf_token %}
+            <input type="hidden" name="tablero" value="{{ tablero }}">
+            <input type="hidden" name="turno" value="{{ turno }}">
+            {% for casilla in tablero %}
+                <button
+                    type="submit"
+                    name="posicion"
+                    value="{{ forloop.counter0 }}"
+                    class="game-cell {% if casilla == 'X' %}cell-x{% elif casilla == 'O' %}cell-o{% endif %}"
+                    {% if casilla != '-' %}disabled{% endif %}
+                    aria-label="Casilla {{ forloop.counter }}">
+                    {% if casilla != '-' %}{{ casilla }}{% endif %}
+                </button>
+            {% endfor %}
+        </form>
+    {% else %}
+        <div class="game-board" aria-label="Tablero final">
+            {% for casilla in tablero %}
+                <div class="game-cell {% if casilla == 'X' %}cell-x{% elif casilla == 'O' %}cell-o{% endif %}">
+                    {% if casilla != '-' %}{{ casilla }}{% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if terminado %}
+        <a class="button game-restart" href="{% url 'tres_en_raya:juego' %}">Jugar otra vez</a>
+    {% endif %}
+</section>
+{% endblock %}
