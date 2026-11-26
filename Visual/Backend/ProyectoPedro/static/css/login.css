@@ -1,0 +1,141 @@
+:root {
+    color-scheme: light;
+    --ink: #18342f;
+    --muted: #66736d;
+    --paper: #fbfaf6;
+    --green: #246b55;
+    --green-dark: #194e3e;
+    --line: #dde4dc;
+    --error: #a33b32;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 90% 15%, rgb(36 107 85 / 12%), transparent 24rem),
+        var(--paper);
+    font-family: Arial, sans-serif;
+}
+
+.auth-page {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card {
+    width: min(100%, 28rem);
+    padding: clamp(2rem, 7vw, 3rem);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: rgb(255 255 255 / 82%);
+    box-shadow: 0 1.5rem 4rem rgb(24 52 47 / 8%);
+}
+
+.auth-eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.auth-card h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 9vw, 3.25rem);
+    letter-spacing: -0.07em;
+}
+
+.auth-intro {
+    margin: 0.75rem 0 2rem;
+    color: var(--muted);
+}
+
+.auth-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.auth-form p {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0;
+}
+
+.auth-form label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.auth-form input {
+    width: 100%;
+    min-height: 2.9rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 0.65rem;
+    color: var(--ink);
+    background: white;
+    font: inherit;
+}
+
+.auth-form input:focus-visible {
+    border-color: var(--green);
+    outline: 3px solid rgb(36 107 85 / 18%);
+}
+
+.auth-form .helptext {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.auth-form .errorlist {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--error);
+    font-size: 0.9rem;
+}
+
+.auth-form button {
+    min-height: 3rem;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 0;
+    border-radius: 0.65rem;
+    color: white;
+    background: var(--green);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.auth-form button:hover,
+.auth-form button:focus-visible {
+    transform: translateY(-2px);
+    background: var(--green-dark);
+}
+
+.auth-footer {
+    margin: 1.5rem 0 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+.auth-footer a {
+    color: var(--green);
+    font-weight: 700;
+    text-underline-offset: 0.2em;
+}
+
+.auth-footer a:hover,
+.auth-footer a:focus-visible {
+    color: var(--green-dark);
+}

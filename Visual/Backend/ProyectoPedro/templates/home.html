@@ -13,6 +13,13 @@
             <p class="eyebrow">PORTAL DE APLICACIONES</p>
             <h1>Mi Proyecto</h1>
             <p>Selecciona una aplicación para abrirla.</p>
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'usuarios:cerrar_sesion' %}">
+                {% csrf_token %}
+                <button type="submit">Cerrar sesión</button>
+            </form>
+                {% endif %}
+                
             <p>Has visitado esta pagina {{ visitas }} veces </p>
         </header>
 

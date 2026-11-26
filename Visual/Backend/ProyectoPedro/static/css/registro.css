@@ -1,0 +1,21 @@
+.auth-page--register {
+    align-items: start;
+}
+
+.auth-card--register {
+    width: min(100%, 34rem);
+    margin: auto;
+}
+
+.auth-card--register .auth-intro {
+    margin-bottom: 1.5rem;
+}
+
+.auth-card--register .auth-form .helptext ul {
+    margin: 0.4rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.auth-card--register .auth-form .helptext li + li {
+    margin-top: 0.25rem;
+}

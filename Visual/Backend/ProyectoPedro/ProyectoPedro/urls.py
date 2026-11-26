@@ -25,4 +25,5 @@ urlpatterns = [
     path('tienda-bolis/', include('tienda_bolis.urls')),
     path('calendario/', include('calendario.urls')),
     path('tres-en-raya/', include('tres_en_raya.urls')),
+    path('usuarios/', include('usuarios.urls')),
 ]

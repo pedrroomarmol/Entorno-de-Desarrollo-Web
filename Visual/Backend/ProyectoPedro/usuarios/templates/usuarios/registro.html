@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+</head>
+<body>
+    <main class="auth-page auth-page--register">
+        <section class="auth-card auth-card--register" aria-labelledby="register-title">
+            <p class="auth-eyebrow">PORTAL DE APLICACIONES</p>
+            <h1 id="register-title">Crear cuenta</h1>
+            <p class="auth-intro">Regístrate para acceder a las aplicaciones.</p>
+
+            <form class="auth-form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Registrarse</button>
+            </form>
+
+            <p class="auth-footer">
+                ¿Ya tienes una cuenta?
+                <a href="{% url 'usuarios:iniciar_sesion' %}">Inicia sesión</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
